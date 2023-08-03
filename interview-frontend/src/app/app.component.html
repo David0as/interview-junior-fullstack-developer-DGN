@@ -1,4 +1,8 @@
-<input type="text" [formControl]="searchControl" placeholder="Search for a city">
-    <div *ngFor="let city of (cities | async | pipefilter:searchControl.value)">
+<div class="container">
+  <input type="text" [formControl]="searchControl" placeholder="Search for a city" class="searchBarInput">
+  <div class="articlesTable">
+    <div class="article" *ngFor="let city of (cities | async | pipefilter:searchControl.value)">
       {{ city.cityName }}
     </div>
+  </div>
+</div>
